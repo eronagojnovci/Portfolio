@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/main.scss';
 import logo from '../assets/images/moon.png';
-import { FaDove } from 'react-icons/fa';
 
 const Footer = () => {
   return (
