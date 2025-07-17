@@ -1,0 +1,132 @@
+.about-card {
+  padding: 2.5rem 2rem;
+  background: rgba(255 255 255 / 0.15);
+  border-radius: 24px;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.12),
+    inset 0 0 40px rgba(255 255 255 / 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-direction: row;
+  transition: all 0.3s ease;
+
+  height: auto;  // Remove fixed height to allow flexibility on mobile
+
+  // Image container
+  .about-image {
+    flex-shrink: 0;
+    width: 280px;
+    height: 280px;
+    border-radius: 20px;
+    background-image: url('../assets/images/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  // Info section
+  .about-info {
+    flex: 1 1 auto;
+    color: #f4f4f4;
+    font-family: 'Quicksand', sans-serif;
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #ffc1d3;
+      text-shadow: 0 2px 6px rgba(255, 192, 203, 0.5);
+    }
+
+    ul {
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+      line-height: 1.6;
+      color: #eee;
+
+      li {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      a {
+        color: #ff8bb3;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+
+        &:hover,
+        &:focus {
+          color: #ff4c82;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // Responsive for tablets and smaller screens
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    height: auto;
+
+    .about-image {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto;
+    }
+
+    .about-info {
+      text-align: center;
+
+      h3 {
+        font-size: 1.6rem;
+      }
+
+      ul {
+        padding-left: 1rem;
+        li {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  // Responsive for mobile phones
+  @media (max-width: 480px) {
+    padding: 1.5rem 1rem;
+          margin-bottom: 100px;
+
+
+    .about-image {
+      width: 180px;
+      height: 180px;
+    }
+
+    .about-info {
+      h3 {
+        font-size: 1.4rem;
+      }
+
+      ul {
+        padding-left: 0.8rem;
+
+        li {
+          font-size: 0.9rem;
+          margin-bottom: 0.4rem;
+        }
+      }
+    }
+  }
+}

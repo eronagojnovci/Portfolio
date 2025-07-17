@@ -1,0 +1,79 @@
+.footer-container {
+  margin: 2rem auto 1.5rem auto;
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  text-align: center;
+  color: antiquewhite;
+  font-family: 'Abel', sans-serif;
+  user-select: none;
+
+  @media (max-width: 768px) {
+    margin: 1.5rem auto 1rem auto;
+    margin-top: 100px;
+  }
+
+  @media (max-width: 480px) {
+    margin: 1rem auto 0.5rem auto;
+        margin-top: 100px;
+
+  }
+}
+
+.rotating-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.rotating-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.center-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 110px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  
+}
+
+.rotating-svg {
+  width: 200px;
+  height: 200px;
+  animation: spin 10s linear infinite;
+}
+
+.svg-text {
+  font-size: 14px;
+  fill: rgba(250, 215, 237, 0.8);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.footer-text {
+  margin-top: 1rem;
+  
+  p {
+    font-size: 1rem;
+    opacity: 0.8;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
