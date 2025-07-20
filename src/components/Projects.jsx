@@ -1,53 +1,86 @@
 import React from 'react';
-import '../styles/main.scss';
+import project1 from '../assets/images/image5.png';
+import project2 from '../assets/images/image1.png';
+import project3 from '../assets/images/image2.png';
+import project from '../assets/images/image.png';
+import project5 from '../assets/images/image4.png';
+import project6 from '../assets/images/erona.png';
+
+
+
+
 
 const projects = [
   {
-    title: 'Cup of joy',
-    description: "An app designed to be an online coffee shop.",
-    link: 'https://cupofjoycoffeshop.netlify.app/',
-    tech: "HTML, CSS, JS",
+    title: 'Cup of Joy',
+    description: 'A coffee shop website built on Html,CSS,JS',
+    imageUrl: project1,
+    repoUrl: 'https://cupofjoycoffeshop.netlify.app/',
+  },
+   {
+    title: 'Library',
+    description: 'A booktstore app built on Java and JavaFX',
+    imageUrl: project,
+    repoUrl: 'https://cupofjoycoffeshop.netlify.app/',
   },
   {
-    title: 'EronePhotography',
-    description: "A simple website to showcase my photography.",
-    link: 'https://eronephotography.netlify.app/',
-    tech: "HTML, CSS, JS",
+    title: 'Calculator App',
+    description: 'A calculator application built on Java and JavaFX ',
+    imageUrl: project2,
+    repoUrl: 'https://github.com/eronagojnovci/Calculator.App',
   },
   {
-    title: 'MyMmmmood',
-    description: "A website built to focus on mental health.",
-    link: 'https://mymmmood.netlify.app/',
-    tech: "React.JS",
+    title: 'Mymmmood',
+    description: 'A mental health website built on ReactJS ',
+    imageUrl: project3,
+    repoUrl: 'https://mymmmood.netlify.app/',
   },
   {
-    title: 'LibraryManager',
-    description: "A library app made with JavaFX to manage book lending.",
-    link: 'https://github.com/eronagojnovci/library',
-    tech: "Java, JavaFX",
+    title: 'Online Exam',
+    description: 'An online exam built on Java ',
+    imageUrl: project5,
+    repoUrl: 'https://github.com/eronagojnovci/online-exam',
+  },
+  {
+    title: 'Portfolio',
+    description: 'A portfolio built on ReactJS application built on Java and JavaFX ',
+    imageUrl: project6,
+    repoUrl: 'https://eronegojnovci.netlify.app/',
   },
 ];
-
 const Projects = () => {
   return (
-    <section className="projects-wrapper" id="projects">
-      <h2 className="projects-title">My Projects</h2>
-      <div className="cards">
-        {projects.map((project, index) => (
-          <article className="card" key={index}>
-            <div>
-              <h2>{project.title}</h2>
-              <h3>{project.tech}</h3>
-              <p>{project.description}</p>
-              <a href={project.link} target="_blank" rel="noreferrer">
-                View Project
-              </a>
+    <section className="projects-section" id="projects">
+      <h2>My Projects</h2>
+      <div className="projects-grid">
+        {projects.map(({ title, description, imageUrl, demoUrl, repoUrl }) => (
+          <div key={title} className="project-card">
+            <img src={imageUrl} alt={title} className="project-image" />
+            <div className="project-info">
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <div className="project-links">
+             
+                {repoUrl && (
+                  <a href={repoUrl} target="_blank" rel="noopener noreferrer">
+                    Link
+                  </a>
+                )}
+              </div>
             </div>
-          </article>
+          </div>
         ))}
       </div>
+
       <div className="view-more-container">
-        <a className="view-more-btn" href="https://github.com/eronagojnovci/library">View More Projects</a>
+        <a
+          href="https://github.com/eronagojnovci"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="view-more-btn"
+        >
+          View More on GitHub
+        </a>
       </div>
     </section>
   );

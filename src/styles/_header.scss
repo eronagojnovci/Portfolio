@@ -131,3 +131,11 @@ body {
     }
   }
 }
+.name a {
+  color: $accent;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

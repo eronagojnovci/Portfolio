@@ -1,18 +1,23 @@
 .contact-section {
   text-align: center;
- margin-bottom: -130px;
+  padding: 4rem 2rem;
+  margin-bottom: -100px;
 
   h2 {
     font-size: 2.8rem;
-    color: #efdede;
+    color: #cfe3ff;
     margin-bottom: 1rem;
     animation: fadeIn 1s ease forwards;
+    font-weight: 700;
   }
 
   p {
-    color: #ccc;
+    color: #a0b3d6;
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     animation: fadeIn 1.3s ease forwards;
   }
 
@@ -25,20 +30,44 @@
     .contact-btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      padding: 12px 20px;
-      border-radius: 30px;
+      padding: 14px 26px;
+      border-radius: 40px;
       font-size: 1.1rem;
-      background: #efdede;
-      color: #000;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      color: #cfe3ff;
+      border: 1.5px solid #cfe3ff;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(130, 170, 255, 0.15);
 
       &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 18px rgba(255, 200, 200, 0.25);
+        transform: translateY(-4px);
+        background: rgba(130, 170, 255, 0.15);
+        box-shadow: 0 8px 30px rgba(130, 170, 255, 0.3);
       }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2.3rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .contact-btn {
+      font-size: 1rem;
+      padding: 12px 22px;
     }
   }
 }

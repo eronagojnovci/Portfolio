@@ -1,6 +1,6 @@
 .tech-section {
   padding: 5rem 2rem;
-  color: #f9f7f8; /* very pale pinkish-white */
+  color: #d6d6e0; 
   text-align: center;
   max-width: 900px;
   margin: -200px auto -100px;
@@ -11,12 +11,13 @@
     h2 {
       font-size: 2.6rem;
       font-weight: 600;
-      color: #f9d7de; /* very soft baby pink */
-      text-shadow: 0 1px 4px rgba(249, 215, 222, 0.3);
+      color: #b3b7d1; 
+      text-shadow: 0 1px 4px rgba(179, 183, 209, 0.3);
+      user-select: none;
     }
 
     p {
-      color: #e6d4d9;
+      color: #a2a6bf;
       font-size: 1.1rem;
       margin-top: 0.5rem;
     }
@@ -30,14 +31,14 @@
 
   .tech-item {
     position: relative;
-    background: #3a2b35; /* dark muted mauve */
-    border-radius: 10px;
+    background: #1e2749;
+    border-radius: 15px;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 15px rgba(191, 161, 174, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     overflow: hidden;
     transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
     cursor: default;
@@ -45,21 +46,22 @@
     svg {
       position: relative;
       z-index: 2;
-      color: #f4bcc9; /* pastel pink */
+      color: #b3b7d1; 
       margin-bottom: 0.7rem;
       width: 42px;
       height: 42px;
       transition: color 0.3s ease;
-      filter: drop-shadow(0 0 2px #f4bcc9);
+      filter: drop-shadow(0 0 3px rgba(179, 183, 209, 0.7));
     }
 
     span {
       position: relative;
       z-index: 2;
-      font-size: 0.9rem;
-      color: #f9f7f8;
+      font-size: 1rem;
+      color: #d6d6e0;
       font-weight: 500;
       text-align: center;
+      user-select: none;
     }
 
     &::before {
@@ -69,107 +71,82 @@
       left: -40%;
       width: 180%;
       height: 180%;
-      background: linear-gradient(
-        120deg,
-        #fce8ed,
-        #fbdde3,
-        #f8ced6,
-        #f6c3ce,
-        #f4b8c7,
-        #f1aec0,
-        #eea4b9,
-        #ea9bb2,
-        #e793ab,
-        #e48ca4
-      );
+      background: radial-gradient(circle at center, #4b527a 0%, #1e2749 70%);
       filter: blur(30px);
-      animation: auroraShift 25s linear infinite;
-      opacity: 0.3;
+      opacity: 0.15;
       border-radius: 50%;
       z-index: 1;
       transition: opacity 0.3s ease;
     }
 
     &:hover {
-      background: #4a3946;
-      box-shadow: 0 15px 30px rgba(244, 188, 201, 0.4);
+      background: #2b3467;
+      box-shadow: 0 15px 35px rgba(75, 82, 122, 0.6);
       transform: translateY(-4px);
 
       &::before {
-        opacity: 0.5;
+        opacity: 0.35;
         filter: blur(40px);
       }
 
       svg {
-        color: #e98ca6;
-        filter: drop-shadow(0 0 4px #e98ca6);
+        color: #9ba1d6;
+        filter: drop-shadow(0 0 6px #9ba1d6);
       }
     }
   }
 }
 
-@keyframes auroraShift {
-  0% {
-    transform: translateX(0) translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateX(15%) translateY(10%) rotate(10deg);
-  }
-  100% {
-    transform: translateX(0) translateY(0) rotate(0deg);
-  }
-}
-
-/* Responsive styles unchanged */
+/* Responsive */
 @media (max-width: 1024px) {
   .tech-section {
     padding: 4rem 1.5rem;
-  }
 
-  .tech-section .tech-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    .tech-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
   }
 }
 
 @media (max-width: 768px) {
   .tech-section {
     padding: 3rem 1rem;
-  }
 
-  .tech-section .tech-header h2 {
-    font-size: 2rem;
-  }
-
-  .tech-section .tech-header p {
-    font-size: 1rem;
-  }
-
-  .tech-section .tech-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .tech-section .tech-item {
-    padding: 1.5rem 0.75rem;
-
-    svg {
-      width: 36px;
-      height: 36px;
+    .tech-header h2 {
+      font-size: 2rem;
     }
 
-    span {
-      font-size: 0.85rem;
+    .tech-header p {
+      font-size: 1rem;
+    }
+
+    .tech-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .tech-item {
+      padding: 1.5rem 0.75rem;
+
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+
+      span {
+        font-size: 0.9rem;
+      }
     }
   }
 }
 
 @media (max-width: 480px) {
-  .tech-section .tech-grid {
+  .tech-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .tech-section .tech-item {
+  .tech-item {
     padding: 1.25rem 0.5rem;
 
     svg {
@@ -178,7 +155,7 @@
     }
 
     span {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
   }
 }

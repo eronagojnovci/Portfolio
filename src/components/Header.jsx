@@ -10,7 +10,8 @@ const Header = () => {
 
   return (
     <nav className="header">
-      <div className="name">Erone Gojnovci</div>
+      <div className="name">  <a href="#home">Eronë Gojnovci</a>
+</div>
 
       <div
         className={`burger ${menuOpen ? 'active' : ''}`}

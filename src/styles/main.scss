@@ -7,14 +7,22 @@
 @import './pro';
 @import './tech';
 
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
 body {
+  
   overflow-x: hidden;
   background: #050d1d;
+  font-family: 'Inter', sans-serif;
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
 }
 
 .container {
@@ -35,7 +43,7 @@ section {
   @media (max-width: 600px) {
     min-height: auto; 
     padding: 1.5rem 1rem;
-    justify-content: flex-start; /* stack content from top */
+    justify-content: flex-start; 
     align-items: stretch;
   }
 }
@@ -43,12 +51,13 @@ section {
 h1, h2 {
   color: $text;
 
-  /* Responsive font sizes */
   @media (max-width: 768px) {
-    font-size: 1.8rem;
+    font-size: 1.8rem;    max-width: 100%;
+
   }
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 1.5rem;     max-width: 100%;
+
   }
 }
 
